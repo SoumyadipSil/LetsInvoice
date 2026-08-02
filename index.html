@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LetsInvoice — Beautiful Invoices for Freelancers & Small Businesses</title>
+<meta name="description" content="Create professional GST-ready invoices in minutes. 7 stunning templates. No signup needed." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">Lets<span>Invoice</span></a>
+  <div class="nav-links">
+    <a href="#how-it-works">How it works</a>
+    <a href="#templates">Templates</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#app" class="nav-cta">Create Invoice</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><div class="eyebrow-dot"></div>No signup · No subscription · Just invoices</div>
+    <h1 class="hero-headline">Invoices your<br>clients will <em>actually</em><br>pay on time.</h1>
+    <p class="hero-sub">Professional GST-ready invoices in under 3 minutes. 7 stunning templates. Download a clean PDF for just ₹99. No account needed, ever.</p>
+    <div class="hero-actions">
+      <a href="#app" class="btn-primary">Create Free Invoice</a>
+      <a href="#templates" class="btn-ghost">See templates</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><path d="M20 6 9 17l-5-5"/></svg></div>GST-ready</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><path d="M20 6 9 17l-5-5"/></svg></div>UPI + Bank</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><path d="M20 6 9 17l-5-5"/></svg></div>No login</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><path d="M20 6 9 17l-5-5"/></svg></div>INR & USD</div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="invoice-mockup">
+      <div class="mock-header">
+        <div>
+          <div class="mock-biz">Priya Mehta Studio</div>
+          <div class="mock-biz-sub">priya@mehtastudio.in · GSTIN 27AABCX1234Z</div>
+        </div>
+        <div>
+          <div class="mock-inv-label">Tax Invoice</div>
+          <div class="mock-inv-num">INV-2025-042</div>
+        </div>
+      </div>
+      <div style="padding:0 24px;background:#0c0b09;">
+        <div class="mock-chips">
+          <div class="mock-chip"><div class="mock-chip-l">Issued</div><div class="mock-chip-v">27 Mar 2025</div></div>
+          <div class="mock-chip"><div class="mock-chip-l">Due</div><div class="mock-chip-v gold">11 Apr 2025</div></div>
+          <div class="mock-chip"><div class="mock-chip-l">Status</div><div class="mock-chip-v gold">Unpaid</div></div>
+        </div>
+        <div style="height:16px"></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-parties">
+          <div><div class="mock-party-lbl">From</div><div class="mock-party-name">Priya Mehta Studio</div><div class="mock-party-det">123 Koregaon Park<br>Pune, MH 411001</div></div>
+          <div><div class="mock-party-lbl">Bill to</div><div class="mock-party-name">Nexus Tech Pvt. Ltd.</div><div class="mock-party-det">Tower 3, Cybercity<br>Mumbai 400076</div></div>
+        </div>
+        <table class="mock-table">
+          <thead><tr><th>Description</th><th>Qty</th><th>Rate</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Brand Identity Design</td><td>1</td><td>₹45,000</td><td>₹45,000</td></tr>
+            <tr><td>Website UI/UX Design</td><td>1</td><td>₹35,000</td><td>₹35,000</td></tr>
+            <tr><td>Social Media Pack</td><td>2</td><td>₹8,000</td><td>₹16,000</td></tr>
+          </tbody>
+        </table>
+        <div class="mock-total"><span class="mock-total-lbl">Total Due</span><span class="mock-total-amt">₹1,07,616</span></div>
+      </div>
+      <div class="mock-foot"><span>Due within 15 days</span><span>UPI: priya@hdfcbank</span></div>
+    </div>
+    <div class="float-badge badge-pdf"><div class="float-badge-icon icon-accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 16h6M9 12.5h6"/></svg></div><div class="float-badge-text"><strong>PDF ready</strong><span>Download instantly</span></div></div>
+    <div class="float-badge badge-gst"><div class="float-badge-icon icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6 9 17l-5-5"/></svg></div><div class="float-badge-text"><strong>GST compliant</strong><span>CGST + SGST split</span></div></div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Premium Templates</div></div>
+  <div class="stat-item"><div class="stat-num">₹99</div><div class="stat-label">One PDF Download</div></div>
+  <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Signups Required</div></div>
+  <div class="stat-item"><div class="stat-num">3 min</div><div class="stat-label">Avg. Time to Invoice</div></div>
+</div>
+
+<section class="how-section" id="how-it-works">
+  <span class="section-label rv">How it works</span>
+  <h2 class="section-headline rv">From blank to<br>professional in <em>3 steps</em></h2>
+  <div class="steps">
+    <div class="step rv"><div class="step-num">01</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><div class="step-title">Fill your details</div><p class="step-desc">Enter your business info, client details, line items, GST percentage and payment details. Live preview updates as you type.</p></div>
+    <div class="step rv" style="transition-delay:.1s"><div class="step-num">02</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="step-title">Pick a template</div><p class="step-desc">Choose from 7 professionally designed templates. Switch between them instantly — your data stays put.</p></div>
+    <div class="step rv" style="transition-delay:.2s"><div class="step-num">03</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 3v13"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></div><div class="step-title">Download your PDF</div><p class="step-desc">Create for free. Export a pixel-perfect, client-ready PDF instantly. No account, no subscription, no watermark.</p></div>
+  </div>
+</section>
+
+<section class="templates-section" id="templates">
+  <div class="templates-inner">
+    <div class="templates-header rv">
+      <div>
+        <span class="section-label">Templates</span>
+        <h2 class="section-headline" style="margin-bottom:0">7 designs.<br>One for <em>every</em> freelancer.</h2>
+      </div>
+      <a href="#app" class="btn-primary" style="white-space:nowrap;align-self:flex-end">Try them free →</a>
+    </div>
+
+    <div class="template-grid rv" id="templateCardsTop">
+      <div class="tpl-card" data-tpl="t1"><span class="tpl-badge badge-free">Free</span><div class="tpl-preview prev-classic"><div style="display:flex;justify-content:space-between;border-bottom:2px solid #0c0b09;padding-bottom:6px;margin-bottom:6px"><span style="font-size:9px;font-weight:700">Priya Mehta</span><span style="font-size:11px;font-weight:800;color:var(--accent)">INV</span></div><div class="prev-line" style="background:var(--cream);width:80%"></div><div class="prev-line" style="background:var(--cream);width:60%"></div><div class="prev-line" style="background:var(--accl);width:40%;margin-top:8px"></div><div class="prev-line" style="background:var(--cream);width:80%"></div><div class="prev-line" style="background:var(--cream);width:65%"></div></div><div class="tpl-info"><div class="tpl-name">Classic</div><div class="tpl-for">Consultants · Agencies</div></div></div>
+      <div class="tpl-card" data-tpl="t2"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-bold"><div class="p-header"><span style="font-size:9px;font-weight:700;color:#fff">Priya Mehta</span><span style="font-size:12px;font-weight:800;color:#e8784a">INVOICE</span></div><div class="prev-line" style="background:rgba(255,255,255,.1);width:80%"></div><div class="prev-line" style="background:rgba(232,120,74,.4);width:60%"></div><div class="prev-line" style="background:rgba(255,255,255,.1);width:40%"></div></div><div class="tpl-info"><div class="tpl-name">Bold</div><div class="tpl-for">Designers · Creatives</div></div></div>
+      <div class="tpl-card" data-tpl="t3"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-soft"><div class="p-header"><span style="font-size:9px;font-weight:700;color:#3d2c28">Priya Mehta</span><span style="font-size:12px;font-weight:600;color:#d4856a;font-family:var(--font-display)">Invoice</span></div><div class="prev-line" style="background:rgba(212,133,106,.2);width:80%"></div><div class="prev-line" style="background:rgba(212,133,106,.2);width:60%"></div><div class="prev-line" style="background:rgba(212,133,106,.35);width:40%"></div></div><div class="tpl-info"><div class="tpl-name">Soft</div><div class="tpl-for">Coaches · Writers</div></div></div>
+      <div class="tpl-card" data-tpl="t4"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-corp"><div class="p-top"><div class="p-name">PRIYA MEHTA STUDIO</div><div class="p-inv" style="margin-top:3px">INV-2025-042</div></div><div class="p-body"><div class="prev-line" style="background:var(--cream);width:80%"></div><div class="prev-line" style="background:rgba(212,175,55,.25);width:60%"></div><div class="prev-line" style="background:var(--cream);width:40%"></div></div></div><div class="tpl-info"><div class="tpl-name">Corporate</div><div class="tpl-for">B2B · High-ticket</div></div></div>
+    </div>
+    <div class="template-grid-2 rv" style="transition-delay:.1s" id="templateCardsBottom">
+      <div class="tpl-card" data-tpl="t5"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-mod"><div class="p-side"><div class="p-dot"></div><div class="p-name">PM</div><div class="p-s-line" style="width:20px"></div><div class="p-s-line" style="width:70%"></div><div class="p-s-line" style="width:50%"></div></div><div class="p-main"><div class="p-inv">Invoice</div><div class="p-line" style="background:#f3f0ff;width:80%"></div><div class="p-line" style="background:#e9d5ff;width:70%"></div><div class="p-line" style="background:#f3f0ff;width:60%"></div></div></div><div class="tpl-info"><div class="tpl-name">Modern</div><div class="tpl-for">Developers · Tech</div></div></div>
+      <div class="tpl-card" data-tpl="t6"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-min"><div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:8px"><div style="display:flex;gap:8px;align-items:flex-end"><div style="width:3px;height:36px;background:var(--accent);border-radius:1px"></div><div style="font-size:9px;font-weight:700">Priya</div></div><div style="font-size:22px;font-weight:800;color:var(--cream);letter-spacing:-.05em">INV</div></div><div class="prev-line" style="background:var(--cream);width:80%"></div><div class="prev-line" style="background:var(--cream);width:55%"></div></div><div class="tpl-info"><div class="tpl-name">Minimal</div><div class="tpl-for">Architects · Photographers</div></div></div>
+      <div class="tpl-card" data-tpl="t7"><span class="tpl-badge badge-paid">Paid</span><div class="tpl-preview prev-retro"><div style="margin-bottom:7px"><div style="font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2c1810">PRIYA MEHTA</div><div style="font-family:var(--font-display);font-size:7px;color:#c9963c;margin-top:2px">INVOICE · 2025</div></div><div class="prev-line" style="background:rgba(201,150,60,.2);width:80%"></div><div class="prev-line" style="background:rgba(201,150,60,.2);width:60%"></div><div class="prev-line" style="background:rgba(201,150,60,.2);width:80%"></div></div><div class="tpl-info"><div class="tpl-name">Retro</div><div class="tpl-for">Artists · Makers</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <span class="section-label rv" style="display:block;text-align:center">Pricing</span>
+  <h2 class="section-headline rv" style="text-align:center">Honest pricing.<br><em>Pay once, done.</em></h2>
+  <div class="pricing-card rv">
+    <div class="pricing-price"><sup>₹</sup>99 <sub>/ pdf</sub></div>
+    <div class="pricing-usd">or $1.50 USD · pay once per download</div>
+    <p class="pricing-desc">Create invoices completely free. Pay only when you're ready to download your clean, professional PDF. No subscription, no hidden fees.</p>
+    <ul class="pricing-features">
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> All 7 templates unlocked</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> GST-compliant (CGST + SGST split)</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> INR, USD, EUR, GBP + more currencies</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> UPI + bank details on invoice</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Discount & tax calculation</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Clean PDF — zero watermarks</li>
+      <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> No account required, ever</li>
+    </ul>
+    <a href="#app" class="pricing-cta btn-primary">Create Your Invoice — Free</a>
+    <div class="pricing-note">Everything above is free to use right now — card payment for PDF export is launching soon. No charge until then.</div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <span class="section-label rv" style="display:block;text-align:center">FAQ</span>
+  <h2 class="section-headline rv" style="text-align:center;margin-bottom:40px">Quick <em>answers</em></h2>
+  <div class="faq-item rv"><div class="faq-q" onclick="toggleFaq(this)">Do I need to create an account? <span class="faq-icon">+</span></div><div class="faq-a">No account, no signup, no email required. Fill your invoice, save it locally, and export whenever you need.</div></div>
+  <div class="faq-item rv"><div class="faq-q" onclick="toggleFaq(this)">Is the PDF watermark-free? <span class="faq-icon">+</span></div><div class="faq-a">Yes. The export is clean and client-ready with no branding from us.</div></div>
+  <div class="faq-item rv"><div class="faq-q" onclick="toggleFaq(this)">Can I use this for GST invoicing? <span class="faq-icon">+</span></div><div class="faq-a">Yes. Add GSTIN fields, choose GST rate, and the invoice will calculate tax automatically.</div></div>
+  <div class="faq-item rv"><div class="faq-q" onclick="toggleFaq(this)">Will my invoice data be saved? <span class="faq-icon">+</span></div><div class="faq-a">Yes, locally in your browser using localStorage. You can clear or load samples anytime.</div></div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lets<span>Invoice</span></div>
+  <div class="footer-copy">© 2025 LetsInvoice · Made in India</div>
+  <div class="footer-links"><a href="#how-it-works">How it works</a><a href="#templates">Templates</a><a href="#pricing">Pricing</a></div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <span class="sticky-cta-text">Create your invoice free →</span>
+  <a href="#app" class="sticky-cta-btn">Start Now · Export PDF</a>
+</div>
+
+<div class="app-anchor" id="app">
+  <h2>Create your invoice <em>right here</em></h2>
+  <p>Free to fill · Export PDF anytime · No account needed</p>
+</div>
+
+<div class="app-bar">
+  <span style="font-size:.95rem;font-weight:800;letter-spacing:-.02em;color:var(--paper)">Lets<span style="color:var(--accent2)">Invoice</span> <span style="font-size:.65rem;color:rgba(255,253,248,.35);font-weight:400;letter-spacing:.06em;font-family:var(--font-display);text-transform:uppercase">Editor</span></span>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+    <button class="abtn abtn-g" onclick="loadSample()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M13 3 4 14h6l-1 7 9-11h-6l1-7Z"/></svg> Sample</button>
+    <button class="abtn abtn-g" onclick="clearAll()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M18 6 6 18M6 6l12 12"/></svg> Clear</button>
+    <button class="abtn abtn-g" onclick="saveDraft()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Save</button>
+    <button class="abtn abtn-a" onclick="downloadPDF()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M12 3v13"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg> Export PDF</button>
+  </div>
+</div>
+
+<div class="tpl-bar" id="tplBar">
+  <span class="tpl-lbl">Templates</span>
+  <button class="tpill on" data-tpl="t1"><span class="dot-f"></span>Classic</button>
+  <button class="tpill" data-tpl="t2"><span class="dot-p"></span>Bold</button>
+  <button class="tpill" data-tpl="t3"><span class="dot-p"></span>Soft</button>
+  <button class="tpill" data-tpl="t4"><span class="dot-p"></span>Corporate</button>
+  <button class="tpill" data-tpl="t5"><span class="dot-p"></span>Modern</button>
+  <button class="tpill" data-tpl="t6"><span class="dot-p"></span>Minimal</button>
+  <button class="tpill" data-tpl="t7"><span class="dot-p"></span>Retro</button>
+</div>
+
+<div class="app-layout">
+  <div class="form-panel" id="formPanel">
+    <div class="fsec" data-collapsible>
+      <div class="fsec-hd" onclick="toggleSection(this)"><div class="fsec-ic">1</div><div class="fsec-tt">Business details</div><div class="fsec-arr">▾</div></div>
+      <div class="fsec-bd">
+        <div class="gr c1">
+          <div class="fg"><div class="lbl">Business name</div><input class="fi" id="fromName" placeholder="Your business name"></div>
+          <div class="fg"><div class="lbl">Email</div><input class="fi" id="fromEmail" placeholder="name@example.com"></div>
+          <div class="fg"><div class="lbl">Phone</div><input class="fi" id="fromPhone" placeholder="+91 ..."></div>
+          <div class="fg"><div class="lbl">GSTIN</div><input class="fi" id="fromGST" placeholder="27AAAAA0000A1Z5"></div>
+          <div class="fg"><div class="lbl">Address</div><textarea class="fi" id="fromAddress" placeholder="Street, city, state, PIN"></textarea></div>
+          <div class="fg"><div class="lbl">Logo</div><label class="logo-up"><input type="file" id="logoInput" accept="image/*"><img id="logoPreview" alt="logo preview"><div class="logo-up-txt" id="logoUploadText">Drop or choose logo (PNG recommended)</div></label><button id="logoRemoveBtn" onclick="removeLogo()" style="display:none;margin-top:5px;width:100%;align-items:center;justify-content:center;gap:5px;font-family:var(--font-display);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:5px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="11" height="11" style="vertical-align:-1px"><path d="M18 6 6 18M6 6l12 12"/></svg> Remove logo</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fsec" data-collapsible>
+      <div class="fsec-hd" onclick="toggleSection(this)"><div class="fsec-ic">2</div><div class="fsec-tt">Client & invoice</div><div class="fsec-arr">▾</div></div>
+      <div class="fsec-bd">
+        <div class="gr c1">
+          <div class="fg"><div class="lbl">Client name</div><input class="fi" id="toName" placeholder="Client / company name"></div>
+          <div class="fg"><div class="lbl">Client GSTIN</div><input class="fi" id="toGST" placeholder="Optional GSTIN"></div>
+          <div class="fg"><div class="lbl">Client address</div><textarea class="fi" id="toAddress" placeholder="Client address"></textarea></div>
+          <div class="gr c3">
+            <div class="fg"><div class="lbl">Invoice #</div><input class="fi" id="invNo" placeholder="INV-001"></div>
+            <div class="fg"><div class="lbl">Invoice date</div><input class="fi" id="invDate" type="date"></div>
+            <div class="fg"><div class="lbl">Due date</div><input class="fi" id="dueDate" type="date"></div>
+          </div>
+          <div class="gr c3">
+            <div class="fg"><div class="lbl">Currency</div><select class="fi" id="currency"><option value="₹">INR (₹)</option><option value="$">USD ($)</option><option value="€">EUR (€)</option><option value="£">GBP (£)</option></select></div>
+            <div class="fg"><div class="lbl">GST %</div><input class="fi" id="taxRate" type="number" min="0" step="0.1" value="18"></div>
+            <div class="fg"><div class="lbl">Discount</div><input class="fi" id="discount" type="number" min="0" step="0.01" value="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fsec" data-collapsible>
+      <div class="fsec-hd" onclick="toggleSection(this)"><div class="fsec-ic">3</div><div class="fsec-tt">Invoice items</div><div class="fsec-arr">▾</div></div>
+      <div class="fsec-bd">
+        <div class="ih"><span>Description</span><span>Qty</span><span>Rate</span><span>Amount</span><span></span></div>
+        <div id="itemsWrap"></div>
+        <button class="add-row" onclick="addItem()">+ Add item</button>
+      </div>
+    </div>
+
+    <div class="fsec" data-collapsible>
+      <div class="fsec-hd" onclick="toggleSection(this)"><div class="fsec-ic">4</div><div class="fsec-tt">Payment & notes</div><div class="fsec-arr">▾</div></div>
+      <div class="fsec-bd">
+        <div class="gr c1">
+          <div class="fg"><div class="lbl">Bank / UPI details</div><textarea class="fi" id="paymentDetails" placeholder="Bank account, UPI, payment instructions"></textarea></div>
+          <div class="fg"><div class="lbl">Notes</div><textarea class="fi" id="notes" placeholder="Thank you note / terms"></textarea></div>
+        </div>
+        <button class="samp-btn" onclick="loadSample()">Use sample data</button>
+      </div>
+    </div>
+
+    <div class="fsec" data-collapsible>
+      <div class="fsec-hd" onclick="toggleSection(this)"><div class="fsec-ic">5</div><div class="fsec-tt">Totals preview</div><div class="fsec-arr">▾</div></div>
+      <div class="fsec-bd">
+        <div class="tprev">
+          <div class="tp-r"><span>Subtotal</span><span id="sumSubtotal">₹0.00</span></div>
+          <div class="tp-r"><span>Discount</span><span id="sumDiscount">₹0.00</span></div>
+          <div class="tp-r"><span>Tax</span><span id="sumTax">₹0.00</span></div>
+          <div class="tp-r big"><span>Total due</span><span id="sumTotal">₹0.00</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prev-panel" id="prevPanel">
+    <div class="prev-tb">
+      <div class="prev-lbl">Live preview</div>
+      <div class="prev-acts">
+        <button class="zbtn" onclick="zoomOut()">−</button>
+        <button class="zbtn" onclick="zoomReset()">100%</button>
+        <button class="zbtn" onclick="zoomIn()">+</button>
+        <button class="zbtn dl" onclick="downloadPDF()">Download</button>
+      </div>
+    </div>
+    <div id="invoiceDoc"></div>
+  </div>
+</div>
+
+<div class="modal-bg" id="paywallModal" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" onclick="hidePaywall()">×</button>
+    <h3>Paywall launching soon</h3>
+    <p>PDF export is free while we finish rolling out payments. Once it's live, exporting a PDF will cost ₹99 per download — everything else stays free.</p>
+    <div class="modal-price"><sup>₹</sup>99 <sub>/ pdf</sub></div>
+    <div class="modal-usd">not charged yet · free during this period</div>
+    <ul class="modal-feats">
+      <li><span class="modal-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Landing page</li>
+      <li><span class="modal-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Template switching</li>
+      <li><span class="modal-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Live invoice editor</li>
+      <li><span class="modal-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> Local save / load</li>
+      <li><span class="modal-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M20 6 9 17l-5-5"/></svg></span> PDF export</li>
+    </ul>
+    <a class="modal-pay-btn" href="javascript:void(0)">Add payment later</a>
+    <div class="modal-note">You can replace this button with Gumroad / Razorpay / Stripe later.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
