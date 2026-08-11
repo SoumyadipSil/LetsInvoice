@@ -8,8 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -205,6 +203,7 @@
           <div class="fg"><div class="lbl">Phone</div><input class="fi" id="fromPhone" placeholder="+91 ..."></div>
           <div class="fg"><div class="lbl">GSTIN</div><input class="fi" id="fromGST" placeholder="27AAAAA0000A1Z5"></div>
           <div class="fg"><div class="lbl">Address</div><textarea class="fi" id="fromAddress" placeholder="Street, city, state, PIN"></textarea></div>
+          <div class="fg"><div class="lbl">Custom 'From' Label</div><input class="fi" id="labelFrom" placeholder="From"></div>
           <div class="fg"><div class="lbl">Logo</div><label class="logo-up"><input type="file" id="logoInput" accept="image/*"><img id="logoPreview" alt="logo preview"><div class="logo-up-txt" id="logoUploadText">Drop or choose logo (PNG recommended)</div></label><button id="logoRemoveBtn" onclick="removeLogo()" style="display:none;margin-top:5px;width:100%;align-items:center;justify-content:center;gap:5px;font-family:var(--font-display);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:5px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="11" height="11" style="vertical-align:-1px"><path d="M18 6 6 18M6 6l12 12"/></svg> Remove logo</button></div>
         </div>
       </div>
@@ -217,15 +216,19 @@
           <div class="fg"><div class="lbl">Client name</div><input class="fi" id="toName" placeholder="Client / company name"></div>
           <div class="fg"><div class="lbl">Client GSTIN</div><input class="fi" id="toGST" placeholder="Optional GSTIN"></div>
           <div class="fg"><div class="lbl">Client address</div><textarea class="fi" id="toAddress" placeholder="Client address"></textarea></div>
+          <div class="fg"><div class="lbl">Custom 'Bill To' Label</div><input class="fi" id="labelTo" placeholder="Bill to"></div>
           <div class="gr c3">
+            <div class="fg"><div class="lbl">Doc Title</div><input class="fi" id="labelInvoice" placeholder="Tax Invoice"></div>
             <div class="fg"><div class="lbl">Invoice #</div><input class="fi" id="invNo" placeholder="INV-001"></div>
             <div class="fg"><div class="lbl">Invoice date</div><input class="fi" id="invDate" type="date"></div>
-            <div class="fg"><div class="lbl">Due date</div><input class="fi" id="dueDate" type="date"></div>
           </div>
           <div class="gr c3">
+            <div class="fg"><div class="lbl">Due date</div><input class="fi" id="dueDate" type="date"></div>
             <div class="fg"><div class="lbl">Currency</div><select class="fi" id="currency"><option value="₹">INR (₹)</option><option value="$">USD ($)</option><option value="€">EUR (€)</option><option value="£">GBP (£)</option></select></div>
-            <div class="fg"><div class="lbl">GST %</div><input class="fi" id="taxRate" type="number" min="0" step="0.1" value="18"></div>
-            <div class="fg"><div class="lbl">Discount</div><input class="fi" id="discount" type="number" min="0" step="0.01" value="0"></div>
+            <div class="fg"><div class="lbl">GST % (leave empty to hide)</div><input class="fi" id="taxRate" type="number" min="0" step="0.1" value="18" placeholder="e.g. 18"></div>
+          </div>
+          <div class="gr c3">
+            <div class="fg"><div class="lbl">Discount (leave empty to hide)</div><input class="fi" id="discount" type="number" min="0" step="0.01" value="0" placeholder="e.g. 500"></div>
           </div>
         </div>
       </div>
