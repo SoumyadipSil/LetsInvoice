@@ -1,0 +1,9 @@
+{
+  "name": "LetsInvoice",
+  "short_name": "LetsInvoice",
+  "description": "A beautifully simple, client-side invoice generator.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#4f46e5"
+}
